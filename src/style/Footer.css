@@ -1,0 +1,169 @@
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ /* Ensure full height for body & root */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure main content takes remaining space */
+.main-content {
+  flex: 1;
+}
+
+/* Footer always at bottom */
+.footer {
+  margin-top: auto;
+}
+
+.footer {
+  background:#374C4A;
+  color: #deb3ad;
+  padding: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+   
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+   
+  border-bottom: 1px solid #deb3ad;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  color: #de847b;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.brand h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #deb3ad;
+}
+
+.brand p {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #deb3ad;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.instagram:hover {
+  color: #e4405f;
+}
+
+.youtube:hover {
+  color: #FF0000;
+}
+
+.facebook:hover {
+  color: #1877F2;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #b95c50;
+}
+/* Responsive Design */
+
+/* Tablets (max-width: 1080px) */
+@media (max-width: 1080px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer-section {
+    text-align: center;
+    min-width: 200px;
+  }
+}
+
+/* Small Tablets & Large Mobile (max-width: 780px) */
+@media (max-width: 780px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .brand h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    padding: 5px;
+    width: 100%;
+  }
+
+  .brand h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    gap: 8px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.9rem;
+  }
+}

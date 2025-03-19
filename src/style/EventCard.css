@@ -1,0 +1,254 @@
+ 
+ 
+
+ 
+#event-card {
+  
+  
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.0s ease;
+  overflow: hidden;
+}
+ 
+ 
+
+ 
+#event-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Event Card Image */
+#event-card img {
+  width: 240px;  
+  height: 270px;  
+  object-fit: cover; 
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #864e23;
+}
+
+#event-card img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Title */
+#event-title {
+  
+  font-size: 1rem;
+  font-weight: bold;
+  
+  
+  text-align: center;
+  
+  transition: all 0.3s ease-in-out;
+}
+#event-title:hover {
+  
+  color: #a5500b;
+}
+
+ 
+
+/* About Heading */
+ #top {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #351703;
+  letter-spacing: 1px;
+  font-family: 'Rubik Moonrocks', sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+  
+}
+
+/* Underline Effect */
+ #top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 36%;
+  margin-left: 32%;
+  height: 3px;
+  background: linear-gradient(90deg, #701c06, #c77d45);
+  animation: borderMove 2s infinite alternate ease-in-out;
+}
+
+/* About Description */
+.about p {
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  color: #440101a2;
+  line-height: 1.6;
+  margin: 10px auto;
+  max-width: 80%;
+  text-align: justify;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+}
+@media (max-width: 1048px) {
+  .event-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 5px;
+  }
+
+  .event-card img {
+    width: 160px;
+    height: 190px;
+    
+  }
+
+  .event-title {
+    font-size: 0.9rem;
+  }
+
+   #top {
+    font-size: 2.2rem;
+    margin-top: 20px;
+  }
+
+  .about p {
+    font-size: 15px;
+    max-width: 85%;
+     
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .event-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 10px;
+  }
+
+  .event-card img {
+    width: 140px;
+    height: 160px;
+  }
+
+  .event-title {
+    font-size: 0.9rem;
+  }
+
+   #top {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+  }
+
+  .event-card img {
+    width: 120px;
+    height: 140px;
+  }
+
+  .event-title {
+    font-size: 0.8rem;
+  }
+
+   #top{
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 13px;
+    max-width: 95%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderMove {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/* Individual Event Card */
+ 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .event-card-container {
+    padding: 20px;
+  }
+  .event-card {
+    width: 270px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-card-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .event-card {
+    width: 250px;
+    height: 300px;
+  }
+  .about h1 {
+    font-size: 30px;
+  }
+  .about p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-card {
+    width: 90%;
+    height: auto;
+  }
+  .event-card img {
+    height: 200px;
+  }
+  .about {
+    padding: 30px 15px;
+  }
+  .about h1 {
+    font-size: 24px;
+  }
+  .about p {
+    font-size: 14px;
+  }
+}

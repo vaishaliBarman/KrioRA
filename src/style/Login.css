@@ -1,0 +1,100 @@
+/* Reset Styles */
+ 
+  /* Centered Login Container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  /* Login Form Box */
+  .login-box {
+    background: #CCD2D2;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.479);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Login Heading */
+  .login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Input Fields */
+  .login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  /* Input Focus Effect */
+  .login-box input:focus {
+    border-color: #53eca54b;
+    outline: none;
+    
+  }
+  
+  /* Login Button */
+  .login-box button {
+    width: 100%;
+    padding: 12px;
+    background: #1D2D25;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Button Hover Effect */
+  .login-box button:hover {
+    background: #1f442d;
+    transform: scale(1.05);
+  }
+  
+  /* Signup Link */
+  .login-box a {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #613981ef;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+   
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 400px) {
+    .login-box {
+      width: 90%;
+      padding: 30px;
+    }
+  }
+  

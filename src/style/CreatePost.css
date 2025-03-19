@@ -1,0 +1,76 @@
+/* Centering the Card */
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e7e7de;;
+  
+}
+
+/* Card Styling */
+.create-post-card {
+  background: #CCD2D2;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #a49393;
+}
+
+/* Heading */
+.create-post-card h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #692a06;
+  margin-bottom: 15px;
+}
+
+/* Input Fields */
+.create-post-card input,
+.create-post-card select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #a49393;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  color: #131212;
+  outline: none;
+  transition: 0.3s;
+}
+
+ 
+/* File Input */
+.create-post-card input[type="file"] {
+  border: none;
+  padding: 5px;
+  background: transparent;
+}
+
+/* Button */
+.create-post-card button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #123a22;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-post-card button:hover {
+  background: #285337;
+}
+
+/* Message Styling */
+.create-post-card .message {
+  margin-top: 10px;
+  color: #3f0202;
+  font-size: 2rem;
+}
