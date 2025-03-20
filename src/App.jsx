@@ -29,6 +29,7 @@ function App() {
       </BrowserRouter>
 
       one
+      two
 
       <Footer />
     </GoogleOAuthProvider>
