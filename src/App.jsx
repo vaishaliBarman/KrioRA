@@ -27,13 +27,7 @@ function App() {
           <Route path="/favourite" element={<Favourite />} />
         </Routes>
       </BrowserRouter>
-
-      one
-      two
-      three
-      FOUR
-
-      <Footer />
+    <Footer />
     </GoogleOAuthProvider>
   );
 }
