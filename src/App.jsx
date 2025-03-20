@@ -30,6 +30,7 @@ function App() {
 
       one
       two
+      three
 
       <Footer />
     </GoogleOAuthProvider>
