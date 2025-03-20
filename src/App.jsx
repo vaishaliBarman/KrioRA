@@ -28,6 +28,8 @@ function App() {
         </Routes>
       </BrowserRouter>
 
+      one
+
       <Footer />
     </GoogleOAuthProvider>
   );
