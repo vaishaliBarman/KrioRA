@@ -41,7 +41,7 @@ function CustomNavbar() {
         <Navbar.Brand 
           href="/" 
           className="fw-bold fs-3" 
-          style={{ fontFamily: "'Dancing Script', cursive", color: "#3f1d16", fontWeight: "bold", fontSize: "2rem", transition: "0.3s", letterSpacing: "2px", textShadow: "2px 2px 2px rgba(0, 0, 0, 0.2)" }}
+          style={{ fontFamily: "'Dancing Script', cursive", color: "#2f1d16", fontWeight: "bold", fontSize: "2rem", transition: "0.3s", letterSpacing: "2px", textShadow: "2px 2px 2px rgb(12, 24, 17)" }}
         >
           KRIORA
         </Navbar.Brand>

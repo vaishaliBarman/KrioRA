@@ -66,48 +66,62 @@ const AllEvent = () => {
 
   return (
     <> 
-      <div className="max-w-4xl mx-auto mt-10">
-        <h2 className="text-2xl font-bold mb-4">{eventType} Events</h2>
-        {loading ? (
-          <p>Loading...</p>
-        ) : events.length > 0 ? (
-          <div className="grid grid-cols-3 gap-4">
-            {events.map((event) => {
-              let mediaContent = null;
-              if (event.media?.type === "image") {
-                mediaContent = <img src={event.media.url || "/default-placeholder.jpg"} className="w-full h-48 object-cover rounded" />;
-              } else if (event.media?.type === "video") {
-                mediaContent = (
-                  <video width="100%" height="200" controls className="rounded">
-                    <source src={event.media.url} type="video/mp4" />
-                  </video>
-                );
-              }
+    <div className="p-4 bg-transparent">
+        <h2 className="text-2xl font-bold mb-4"
+    style={{
+      fontFamily: "Yatra One",
+      color: "#2f1d16",
+      fontSize: "1.8rem",
+      textAlign: "center",
+      textShadow: "1px 1px 1px #000",
+      marginTop: "20px",
 
-              return (
-                <div key={event._id} className="p-4 border shadow-lg rounded-lg">
-                  <h3 className="text-lg font-semibold mt-2">{event.title}</h3>
-                  {mediaContent}
+      
+    }}>
+    {eventType} Event Decoration
+  </h2>
+  
+  {loading ? (
+    <p>Loading...</p>
+  ) : events.length > 0 ? (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {events.map((event) => (
+        <div key={event._id} className="p-1  bg-transparent"
+           >
+        
+          <p className="text-lg font-semibold text-center"
+            style={{ fontFamily: "Yatra One", color: "#50323", fontSize: "1.1rem",  backgroundColor: "#93AB9D" , padding: "1px",   marginBottom: "0px", borderRadius:"5PX "}}>  
+            {event.title}
+          </p>
+          
+          {event.media?.type === "image" && (
+            <img src={event.media.url || "/default-placeholder.jpg"} className="w-full h-full object-cover rounded" />
+          )}
+          {event.media?.type === "video" && (
+            <video width="100%" height="300" controls className="rounded">
+              <source src={event.media.url} type="video/mp4" />
+            </video>
+          )}
 
-                  <div className="flex space-x-4 mt-2">
-                    <span onClick={() => handleShareWhatsApp(event)} className="text-green-500 text-xl cursor-pointer">
-                      <FaShareAlt />
-                    </span>
-                    {role === "user" && <FavoriteButton eventId={event._id} token={token} />}
-                    {role === "admin" && (
-                      <button onClick={() => handleDeleteEvent(event._id)} className="bg-red-500 text-white px-3 py-1 rounded">
-                        Delete
-                      </button>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+          <div className="flex space-x-4 mt-2">
+            <span onClick={() => handleShareWhatsApp(event)} className="text-green-500 text-xl cursor-pointer">
+              <FaShareAlt />
+            </span>
+            {role === "user" && <FavoriteButton eventId={event._id} token={token} />}
+            {role === "admin" && (
+              <button onClick={() => handleDeleteEvent(event._id)} className="bg-red-500 text-white px-3 py-1 rounded">
+                Delete
+              </button>
+            )}
           </div>
-        ) : (
-          <p>No events available...</p>
-        )}
-      </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p >No events available...</p>
+  )}
+</div>
+
     </>
   );
 };

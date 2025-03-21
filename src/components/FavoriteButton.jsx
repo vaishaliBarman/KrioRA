@@ -27,8 +27,10 @@ const FavoriteButton = ({ eventId, token }) => {
   };
 
   return (
-    <button onClick={handleFavorite} className={isFavorited ? "saved" : ""}>
-      {isFavorited ? "Saved ✅" : "Save to Favorites ❤️"}
+    <button onClick={handleFavorite} className={isFavorited ? "saved" : ""}
+    style={{ borderRadius: "5px", padding: "3px", marginLeft: "10px", backgroundColor:"rgb(78, 57, 40); ", color:"white" }}>
+    
+      {isFavorited ? "Saved ✅" : "Save❤️"}
     </button>
   );
 };
