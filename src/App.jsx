@@ -16,7 +16,6 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <MainRoutes />
-        <Footer /> {/* Ensure Footer is correctly placed */}
       </BrowserRouter>
     </GoogleOAuthProvider>
   );
