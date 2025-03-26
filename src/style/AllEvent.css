@@ -1,25 +1,22 @@
- 
-  
-  .grid {
+.grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures a responsive grid */
     gap: 20px;
     padding: 20px;
   }
-  .p-4 img {
-    width: 100%;
-    height: 250px;
-   
-  } 
-  video {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  img, video {
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    display: block;
+    object-position: center;
+}
 
-  }
   
   button {
-    background: #b95c50;
+   
     
     border: none;
     padding: 8px 15px;
@@ -31,8 +28,3 @@
   button:hover {
     background: #e41616f1;
   }
-  
-  
- 
-  
-  

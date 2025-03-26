@@ -3,7 +3,7 @@
 import FavoriteButton from "./FavoriteButton";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
-import { FaShareAlt } from "react-icons/fa";
+import { FaShareAlt,  FaTrash } from "react-icons/fa";
 import axios from "axios";
 import "../style/AllEvent.css";
 
@@ -19,8 +19,10 @@ const AllEvent = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
+        
         const response = await axios.get(`http://localhost:5002/events/${eventType}`);
         setEvents(response.data.events || []);
+        console.log("getting data from events db",response.data.events)
       } catch (error) {
         console.error("Error fetching events:", error);
       } finally {
@@ -38,6 +40,7 @@ const AllEvent = () => {
         const res = await axios.get("http://localhost:5002/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
+       
         setRole(res.data.role);
       } catch (error) {
         console.error("Error fetching user:", error);
@@ -66,61 +69,58 @@ const AllEvent = () => {
 
   return (
     <> 
-    <div className="p-4 bg-transparent">
+    <div className=" eventType">
         <h2 className="text-2xl font-bold mb-4"
-    style={{
-      fontFamily: "Yatra One",
-      color: "#2f1d16",
-      fontSize: "1.8rem",
-      textAlign: "center",
-      textShadow: "1px 1px 1px #000",
-      marginTop: "20px",
+            style={{
+              fontFamily: "Yatra One",
+              color: "#2f1d16",
+              fontSize: "1.8rem",
+              textAlign: "center",
+              textShadow: "1px 1px 1px #000",
+              marginTop: "20px",
 
-      
-    }}>
-    {eventType} Event Decoration
-  </h2>
+              
+            }}>
+               {eventType} Event Decoration
+        </h2>
   
-  {loading ? (
-    <p>Loading...</p>
-  ) : events.length > 0 ? (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {events.map((event) => (
-        <div key={event._id} className="p-1  bg-transparent"
-           >
-        
-          <p className="text-lg font-semibold text-center"
-            style={{ fontFamily: "Yatra One", color: "#50323", fontSize: "1.1rem",  backgroundColor: "#93AB9D" , padding: "1px",   marginBottom: "0px", borderRadius:"5PX "}}>  
-            {event.title}
-          </p>
-          
-          {event.media?.type === "image" && (
-            <img src={event.media.url || "/default-placeholder.jpg"} className="w-full h-full object-cover rounded" />
-          )}
-          {event.media?.type === "video" && (
-            <video width="100%" height="300" controls className="rounded">
-              <source src={event.media.url} type="video/mp4" />
-            </video>
-          )}
+      {loading ? (
+            <p>Loading...</p>
+          ) : events.length > 0 ? (
+           
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {[...events].reverse().map((event) => (
+                  <div key={event._id} className="p-1  bg-transparent">
+                    
+                    
+                    {event.media?.type === "image" && (
+                      <img src={event.media.url || "/default-placeholder.jpg"} className="rounded" />
+                    )}
+                    {event.media?.type === "video" && (
+                      <video width="100%" height="300" controls className="rounded">
+                        <source src={event.media.url} type="video/mp4" />
+                      </video>
+                    )}
 
-          <div className="flex space-x-4 mt-2">
-            <span onClick={() => handleShareWhatsApp(event)} className="text-green-500 text-xl cursor-pointer">
-              <FaShareAlt />
-            </span>
-            {role === "user" && <FavoriteButton eventId={event._id} token={token} />}
-            {role === "admin" && (
-              <button onClick={() => handleDeleteEvent(event._id)} className="bg-red-500 text-white px-3 py-1 rounded">
-                Delete
-              </button>
-            )}
-          </div>
-        </div>
-      ))}
+                <div className="flex space-x-4 mt-2">
+                  <span onClick={() => handleShareWhatsApp(event)} className="text-green-500 text-xl cursor-pointer">
+                    <FaShareAlt />
+                  </span>
+                  {role === "user" && <FavoriteButton eventId={event._id} token={token} />}
+                  {role === "admin" && (
+                   <button onClick={() => handleDeleteEvent(event._id)} style={{ all: "unset", cursor: "pointer" }}>
+                   <FaTrash />
+                 </button>
+                  )}
+                </div>
+         </div>
+  ))}
+            </div>
+
+          ) : (
+          <p >No events available...</p>
+      )}
     </div>
-  ) : (
-    <p >No events available...</p>
-  )}
-</div>
 
     </>
   );

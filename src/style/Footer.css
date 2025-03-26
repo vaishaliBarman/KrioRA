@@ -1,41 +1,23 @@
- *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
- }
- /* Ensure full height for body & root */
-html, body, #root {
-  height: 100%;
-  margin: 0;
+
+.footer {
   display: flex;
-  flex-direction: column;
-}
-
-/* Make sure main content takes remaining space */
-.main-content {
-  flex: 1;
-}
-
-/* Footer always at bottom */
-.footer {
   margin-top: auto;
-}
-
-.footer {
+  width: 100%;
+  flex-direction:bottom;
+  align-items: bottom;
   background:#374C4A;
   color: #deb3ad;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  font-family: "Poppins", sans-serif;
-   
+  font-family: 'Parisienne', cursive;/* Clean, modern font */
 }
-
+ 
+ 
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-   
   border-bottom: 1px solid #deb3ad;
 }
 

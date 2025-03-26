@@ -49,65 +49,7 @@ const CreatePost = () => {
     }
   };
 
-  // return (
-  //   <>
-  //   <Navbar />
-  //   <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-  //     <h2 className="text-2xl font-bold mb-4">Create New Event</h2>
-
-  //     {message && <p className="mb-4 text-red-500">{message}</p>}
-
-  //     <form onSubmit={handleSubmit} className="space-y-4">
-  //       {/* Title Input */}
-  //       <input
-  //         type="text"
-  //         placeholder="Event Title"
-  //         value={title}
-  //         onChange={(e) => setTitle(e.target.value)}
-  //         className="w-full p-2 border rounded"
-  //         required
-  //       />
-
-  //       {/* Event Type Dropdown */}
-  //       <select
-  //         value={eventType}
-  //         onChange={(e) => setEventType(e.target.value)}
-  //         className="w-full p-2 border rounded"
-  //         required
-  //       >
-  //         <option value="">Select Event Type</option>
-  //         <option value="Birthday">Birthday</option>
-  //         <option value="Wedding">Wedding Events</option>
-  //         <option value="Proposal Spot">Proposal Spot</option>
-  //         <option value="Engagement">Engagement</option>
-  //         <option value="Baby Shower">Baby Shower</option>
-  //         <option value="Farewell">Farewell</option>
-  //         <option value="Others">Others</option>
-  //       </select>
-
-  //       {/* File Upload */}
-  //       <input
-  //         type="file"
-  //         accept="image/*,video/*"
-  //         onChange={handleFileChange}
-  //         className="w-full p-2 border rounded"
-  //         required
-  //       />
-
-  //       {/* Submit Button */}
-  //       <button
-  //         type="submit"
-  //         className="w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-  //         disabled={loading}
-  //       >
-  //         {loading ? "Uploading..." : "Create Event"}
-  //       </button>
-  //     </form>
-  //   </div>
-  
-    
-  //   </>
-  // )
+   
   return (
     <>
       
