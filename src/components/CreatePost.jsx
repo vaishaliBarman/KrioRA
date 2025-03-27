@@ -27,7 +27,7 @@ const CreatePost = () => {
     formData.append("media", file);
 
     try {
-      const response = await fetch("http://localhost:5002/createEvent", {
+      const response = await fetch("http://localhost:5002/event/createEvent", {
         method: "POST",
         body: formData,
       });

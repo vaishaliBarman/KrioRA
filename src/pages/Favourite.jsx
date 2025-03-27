@@ -21,7 +21,7 @@ const FavouritePage = () => {
         setFavourites(favResponse.data.favorites || []);
 
         // Fetch logged-in user details
-        const userResponse = await axios.get("http://localhost:5002/users", {
+        const userResponse = await axios.get("http://localhost:5002/user/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserName(userResponse.data.name);
@@ -60,7 +60,7 @@ const FavouritePage = () => {
 
   return (
     <div key={fav._id} className="p-4 border shadow-lg rounded-lg">
-      <h2 className="text-lg font-semibold mb-2">{fav.event?.title || "Untitled Event"}</h2>
+      <h5 className="text-lg font-semibold mb-2">{fav.event?.title || "Untitled Event"}</h5>
 
       {/* Ensure media.url exists before rendering */}
       {media?.url ? (

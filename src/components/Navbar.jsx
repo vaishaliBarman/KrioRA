@@ -15,7 +15,7 @@ function CustomNavbar() {
 
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:5002/users", {
+        const response = await axios.get("http://localhost:5002/user/users", {
           headers: { Authorization: `Bearer ${savedToken}` },
         });
         setRole(response.data.role);

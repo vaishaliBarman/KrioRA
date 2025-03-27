@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5002/signup", form, {
+      const { data } = await axios.post("http://localhost:5002/user/signup", form, {
         withCredentials: true,
       });
 

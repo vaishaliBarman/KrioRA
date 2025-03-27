@@ -20,7 +20,7 @@ const AllEvent = () => {
     const fetchEvents = async () => {
       try {
         
-        const response = await axios.get(`http://localhost:5002/events/${eventType}`);
+        const response = await axios.get(`http://localhost:5002/event/events/${eventType}`);
         setEvents(response.data.events || []);
         console.log("getting data from events db",response.data.events)
       } catch (error) {
@@ -37,7 +37,7 @@ const AllEvent = () => {
       if (!token) return;
 
       try {
-        const res = await axios.get("http://localhost:5002/users", {
+        const res = await axios.get("http://localhost:5002/user/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
        
@@ -58,7 +58,7 @@ const AllEvent = () => {
     if (!token) return console.error("No token found, user not authenticated");
 
     try {
-      await axios.delete(`http://localhost:5002/remove/${eventId}`, {
+      await axios.delete(`http://localhost:5002/event/remove/${eventId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEvents((prevEvents) => prevEvents.filter((event) => event._id !== eventId));
